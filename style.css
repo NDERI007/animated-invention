@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.grid-item{
+    border: 1px solid #D3D3D3;
+    padding: 1em;
+}
+#umbrella{
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+#umbrella :hover{
+    background-color: cadetblue;
+}
