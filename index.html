@@ -8,7 +8,15 @@
     <title>etch a sketch</title>
 </head>
 <body>
+    <h1>Sketch Pad</h1>
     <div id="umbrella">
     </div>
+    <button onclick="changeColor('black')">Black</button>
+    <button onclick="changeColor('white')">Erasor</button>
+    <button onclick="changeColor('gray')">Gray</button>
+    <button onclick="changeColor('random')">Random</button>
+    <button onclick="">Reset</button>
+    <input type="number" placeholder="Size of the board" value="16" onchange="changeSize(this.value)">
+    <button>Set Size</button>
 </body>
 </html>
