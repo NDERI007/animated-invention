@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="etch-sk.js" defer></script>
     <title>etch a sketch</title>
 </head>
 <body>
-    <h1>Sketch Pad</h1>
-    <div id="umbrella">
-    </div>
-    <button onclick="changeColor('black')">Black</button>
-    <button onclick="changeColor('white')">Erasor</button>
-    <button onclick="changeColor('gray')">Gray</button>
-    <button onclick="changeColor('random')">Random</button>
-    <button onclick="">Reset</button>
+    <div class="flex-container">
+    <div class="title"><h1>Sketch Pad</h1></div>
+    <div class="content">
+    <div id="umbrella"></div>
+    <div class="buttonBox">
+    <button class="blackBtn" onclick="changeColor('black')">Black</button>
+    <button class="Erasor" onclick="changeColor('white')">Erasor</button>
+    <button class="grayBtn" onclick="changeColor('gray')">Gray</button>
+    <button class="randomBtn" onclick="changeColor('random')">Random</button>
+    <button onclick="resetBoard()">Reset</button>
     <input type="number" placeholder="Size of the board" value="16" onchange="changeSize(this.value)">
-    <button>Set Size</button>
+    </div>
+    </div>
+    </div>
 </body>
 </html>

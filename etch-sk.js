@@ -1,18 +1,18 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
- 
-/* eslint-disable no-undef */ 
-const container = document.querySelector("#umbrella");
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 let color;
+let click = true;
 function makeGrid(size) {
-    let cells = container.querySelectorAll("div");
+    let umbrella = document.querySelector("#umbrella");
+    let cells = umbrella.querySelectorAll("div");
     cells.forEach(div => div.remove());
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    umbrella.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    umbrella.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     let amount = size * size;
-    for (c = 0; c < amount; c++) {
+    for (let c = 0; c < amount; c++) {
         let cell = document.createElement("div");
         cell.addEventListener("mouseover", colourSquare);
-        container.insertAdjacentElement("beforeend", cell);
+        umbrella.insertAdjacentElement("beforeend", cell);
     };
 }
 makeGrid(16);
@@ -25,6 +25,7 @@ function changeSize(input) {
     }
 }
 function colourSquare() {
+    if (click) {
     if (color === "random") {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
     } else {
@@ -32,6 +33,13 @@ function colourSquare() {
     }
 
 }
+}
 function changeColor(choice) {
     color = choice;
 }
+function resetBoard() {
+    let cells = umbrella.querySelectorAll("div");
+    cells.forEach(div => div.style.backgroundColor = 'white');
+}
+
+document.querySelector('body').addEventListener("click" , () => click = !click)
